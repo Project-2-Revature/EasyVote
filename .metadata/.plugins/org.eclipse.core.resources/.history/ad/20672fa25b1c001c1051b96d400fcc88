@@ -1,0 +1,12 @@
+package com.app.service;
+
+import com.app.model.Voter;
+
+public interface VoterSearchService {
+	Voter addVoter(Voter voter);
+	Voter getVoterById(int id);
+	
+	
+
+
+}

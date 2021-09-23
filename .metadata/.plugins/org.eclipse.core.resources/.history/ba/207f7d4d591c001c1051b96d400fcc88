@@ -1,0 +1,16 @@
+package com.app.service;
+
+import com.app.model.Voter;
+
+public class VoterSearchService {
+	Voter addVoter(Voter voter);
+	Voter getVoterById(int id);
+	
+	
+//	
+//	Player addPlayer(Player player);
+//	Player updatePlayer(Player player);
+//	Player getPlayerById(int id);
+//	void deletePlayer(int id);
+
+}
