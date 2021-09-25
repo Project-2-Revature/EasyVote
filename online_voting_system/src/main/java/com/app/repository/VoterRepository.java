@@ -17,13 +17,6 @@ public interface VoterRepository  extends JpaRepository <Voter , Integer>{
 	
 
 
-//	@Repository
-//	public interface PlayerRepository extends JpaRepository<Player, Integer> {
-//		
-//		List<Player> findByName(String name);
-//		List<Player> findByAge(int age);
-//		List<Player> findByTeamName(String teamName);
-//		List<Player> findByCity(String city);
-//
+
 
 }

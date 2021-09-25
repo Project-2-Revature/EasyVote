@@ -16,6 +16,6 @@ public class Voter {
 	private String name;
 	private int age;
 	private long aadhaarNumber;
-	private boolean Status;
+	private boolean status;
 	private String location;
 }

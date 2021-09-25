@@ -1,0 +1,26 @@
+package com.app.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.app.model.Contestant;
+import com.app.service.ContestantCRUDService;
+
+@RestController
+@CrossOrigin
+public class ContestantCRUDController {
+	@Autowired
+	public ContestantCRUDService service;
+	
+	@PostMapping("/contestant")
+	public Contestant addContestant(@RequestBody Contestant contestant) {
+		return service.addContestant(contestant);
+		
+	}
+	
+	
+
+}
