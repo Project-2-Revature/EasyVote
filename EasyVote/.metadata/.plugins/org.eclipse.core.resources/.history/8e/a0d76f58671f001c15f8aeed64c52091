@@ -1,0 +1,36 @@
+package com.app.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.Table;
+
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+@Data
+@Entity
+@Table
+@Getter
+@Setter
+public class Contestant {
+	
+	@Id
+	@GeneratedValue
+	private int id;
+	private String name;
+	private int age;
+	private String partyName ;
+	private long aadhaarNumber ;
+	private String location ;
+	private int voteCount ;
+	
+	@Lob
+	@Column(columnDefinition = "CLOB")
+	private String partyLogo;
+	private String contestantImage ;
+
+}

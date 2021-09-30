@@ -1,0 +1,25 @@
+package com.app;
+
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.app.repository.ContestantRepository;
+import com.app.repository.VoterRepository;
+import com.app.service.ContestantCRUDService;
+import com.app.service.VoterCRUDService;
+
+@RunWith(SpringRunner.class)
+
+@SpringBootTest
+ class ContestantTest {
+	
+	@Autowired
+	private ContestantCRUDService service;
+	
+	@MockBean
+	private ContestantRepository repository;
+
+}

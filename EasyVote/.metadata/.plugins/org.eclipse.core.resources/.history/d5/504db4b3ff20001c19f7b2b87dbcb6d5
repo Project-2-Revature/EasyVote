@@ -1,0 +1,38 @@
+package com.app;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.when;
+
+import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.app.model.Contestant;
+import com.app.model.Voter;
+import com.app.repository.ContestantRepository;
+
+import com.app.service.ContestantCRUDService;
+
+
+@RunWith(SpringRunner.class)
+
+@SpringBootTest
+ class ContestantTest {
+	
+	@Autowired
+	private ContestantCRUDService service;
+	
+	@MockBean
+	private ContestantRepository repository;
+	
+	@Test
+	public void addContestant() {
+		Contestant contestant=new Contestant(200,"lakshmi",23, "BJP",false,"Orisha"  ,"null" ,"null");
+		when(repository.save(contestant)).thenReturn(contestant);
+	assertEquals(contestant,service.addContestant(contestant));
+	}
+
+}

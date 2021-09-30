@@ -1,0 +1,44 @@
+package com.app;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.app.model.Voter;
+import com.app.repository.VoterRepository;
+import com.app.service.VoterCRUDService;
+
+
+@RunWith(SpringRunner.class)
+
+@SpringBootTest
+class OnlineVotingSystemApplicationTests {
+	@Autowired
+	private VoterCRUDService service;
+	
+	@MockBean
+	private VoterRepository repository;
+	@Test
+	public void addVoter() {
+		Voter voter1=new Voter(200,"lakshmi",23,784568234517L,false,"Orisha");
+		when(repository.save(voter1)).thenReturn(voter1);
+	assertEquals(voter1,service.addVoter(voter1));
+	}
+	
+	@Test
+	public void deleteVoterTest() {
+	Voter c=new Voter();
+	c.setId(100);
+	service.deleteVoter(c.getId());
+	verify(repository,times(1)).deleteById(c.getId());
+	}
+
+}
